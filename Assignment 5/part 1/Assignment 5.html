@@ -1,0 +1,80 @@
+<!--
+Name: Abby C.
+File: Assignment 5.html
+Date: 24 April 2026
+Assignment 5 Part 1: Accessibility fixes and answers to project brief questions.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Assignment 5 - Web Accessibility Answers</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1, h2 { color: #333; }
+        section { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Assignment 5 – Web Accessibility</h1>
+    <p>This document provides answers to the project brief questions for the accessibility troubleshooting challenge.</p>
+
+    <section id="color">
+        <h2>Color</h2>
+        <p>The text was difficult to read because the white text on the green background had insufficient color contrast. The contrast ratio was approximately 2.57:1, which is below the WCAG AA standard of 3:1 for large text.</p>
+        <p>To fix this, I changed the background color from <code>green</code> (#008000) to <code>#004000</code>, resulting in a contrast ratio of about 4:1, which meets the AA standard.</p>
+    </section>
+
+    <section id="semantic-html">
+        <h2>Semantic HTML</h2>
+        <p>Without proper semantic HTML, screen readers would struggle to navigate the content structure, as headings were simulated with font sizes rather than actual heading elements, and the navigation was in a generic div.</p>
+        <p>To improve navigation, I replaced <code>&lt;font&gt;</code> tags with proper <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code> elements, converted paragraphs from <code>&lt;br&gt;</code>-separated text to <code>&lt;p&gt;</code> elements, and changed the navigation div to a <code>&lt;nav&gt;</code> element.</p>
+        <p>The navigation menu was updated to use the <code>&lt;nav&gt;</code> semantic element for better accessibility.</p>
+        <p>CSS selectors were updated from <code>font[size="7"]</code> etc. to <code>h1</code>, <code>h2</code>, <code>h3</code>, and <code>div[class="nav"]</code> to <code>nav</code>.</p>
+    </section>
+
+    <section id="images">
+        <h2>The Images</h2>
+        <p>The images lacked alt text, making them inaccessible to screen reader users.</p>
+        <p>I added descriptive <code>alt</code> attributes: <code>alt="A wild bear standing in a forest"</code> for the wild bear image and <code>alt="An urban bear wearing a jacket in a city"</code> for the urban bear image.</p>
+    </section>
+
+    <section id="audio-player">
+        <h2>The Audio Player</h2>
+        <p>The audio player was not accessible to hearing impaired users as it lacked any text alternative.</p>
+        <p>I added a <code>&lt;details&gt;</code> element with a transcript of the audio content.</p>
+        <p>For older browsers, the <code>&lt;audio&gt;</code> element includes a fallback message and a download link: <code>&lt;p&gt;Your browser does not support HTML5 audio. &lt;a href="media/bear.mp3"&gt;Download the audio file&lt;/a&gt;.&lt;/p&gt;</code></p>
+    </section>
+
+    <section id="forms">
+        <h2>The Forms</h2>
+        <p>The search input lacked a label, and the comment form labels were not properly associated with their inputs.</p>
+        <p>For the search form, I added a visually hidden label: <code>&lt;label for="search-input" class="visually-hidden"&gt;Search query&lt;/label&gt;</code> with CSS to hide it from sighted users.</p>
+        <p>For the comment form, I replaced the plain text labels with <code>&lt;label&gt;</code> elements using <code>for</code> and <code>id</code> attributes to associate them unambiguously.</p>
+        <p>CSS was updated to style the flex layout for the comment form pairs.</p>
+    </section>
+
+    <section id="show-hide">
+        <h2>The Show/Hide Comment Control</h2>
+        <p>The control was a div with onclick, which is not keyboard accessible.</p>
+        <p>I changed it to a <code>&lt;button&gt;</code> element, which is natively focusable and activatable with the Tab key and Return/Enter key.</p>
+    </section>
+
+    <section id="table">
+        <h2>The Table</h2>
+        <p>The table lacked a summary and proper header associations, making it hard for screen readers to understand the data structure.</p>
+        <p>I added a <code>&lt;caption&gt;</code> element with "Bear facts table", changed header cells to <code>&lt;th&gt;</code> with <code>scope="col"</code> to associate columns.</p>
+    </section>
+
+    <section id="other-considerations">
+        <h2>Other Considerations</h2>
+        <p>Two additional improvements:</p>
+        <ul>
+            <li>Added a skip link at the top of the page: <code>&lt;a href="#main" class="visually-hidden"&gt;Skip to main content&lt;/a&gt;</code> to allow keyboard users to bypass navigation.</li>
+            <li>Ensured the HTML has <code>lang="en"</code> for proper language identification by assistive technologies.</li>
+        </ul>
+    </section>
+</body>
+</html>
