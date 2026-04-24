@@ -1,0 +1,125 @@
+/*
+    File: assignment 3 part 1 CSS.css
+    Styles for the digital business card layout.
+*/
+
+:root {
+    --card-bg: #ffffff;
+    --page-bg: linear-gradient(180deg, #f0f4f0 0%, #e8f0e8 100%);
+    --primary: #6B7F5C;
+    --secondary: #2D3A2D;
+    --accent: #8F9E7B;
+    --muted: #A8B5A0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--page-bg);
+    color: var(--secondary);
+}
+
+.page-shell {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.business-card {
+    width: 360px;
+    background: var(--card-bg);
+    border-radius: 24px;
+    box-shadow: 0 22px 60px rgba(107, 127, 92, 0.12);
+    padding: 28px;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid rgba(107, 127, 92, 0.08);
+}
+
+.business-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 72px rgba(107, 127, 92, 0.16);
+}
+
+.profile-image {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    border: 4px solid rgba(143, 158, 123, 0.18);
+    background: #f0f4f0;
+}
+
+.card-content h1 {
+    margin: 0;
+    font-size: 1.9rem;
+    letter-spacing: -0.04em;
+}
+
+.role {
+    margin: 10px 0 18px;
+    font-size: 1rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.bio {
+    margin: 0 0 24px;
+    line-height: 1.7;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.contact-list {
+    text-align: left;
+    margin-bottom: 26px;
+    padding: 0 12px;
+}
+
+.contact-list p {
+    margin: 0 0 12px;
+    font-size: 0.97rem;
+}
+
+.contact-list a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.contact-list a:hover {
+    text-decoration: underline;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 999px;
+    background: var(--primary);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.contact-button:hover {
+    background: #5A6B4F;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 400px) {
+    .business-card {
+        width: 100%;
+        padding: 24px;
+    }
+}

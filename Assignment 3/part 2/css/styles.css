@@ -1,0 +1,98 @@
+/*
+    File: styles.css
+    Styles for the student schedule table.
+*/
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #f0f5f0 0%, #e8f0e8 100%);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: 2.5rem;
+    color: #2D3A2D;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid #8CA085;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: white;
+    width: 80%;
+    max-width: 600px;
+}
+
+caption {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #2D3A2D;
+}
+
+th {
+    background: #8CA085;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tbody tr:nth-child(odd) {
+    background: white;
+}
+
+tbody tr:hover {
+    background: #f0f5f0;
+}
+
+/* Color coded categories */
+.class {
+    background: rgba(140, 160, 133, 0.1);
+}
+
+.meal {
+    background: rgba(168, 181, 160, 0.1);
+}
+
+.workout {
+    background: rgba(122, 136, 122, 0.1);
+}
+
+.break {
+    background: rgba(45, 58, 45, 0.1);
+}
+
+.other {
+    background: rgba(168, 181, 160, 0.1);
+}
+
+@media (max-width: 600px) {
+    table {
+        width: 100%;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+}
